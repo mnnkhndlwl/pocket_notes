@@ -86,9 +86,12 @@ const Notes = () => {
                     return (
                       <div
                         key={index}
-                        className="bg-white my-2 p-4 rounded-md shadow w-full"
+                        className="bg-white my-2 p-4 h-auto rounded-md shadow text-wrap"
+                        style={{ maxWidth: "100%", overflowWrap: "break-word" }} // Added styles here
                       >
-                        <p className="mt-2 text-gray-700">{note?.content}</p>
+                        <div className="mt-2 w-full text-gray-700 text-wrap">
+                          {note?.content}
+                        </div>
                         <div className="flex justify-end">
                           <span className="text-sm text-black">
                             {note?.createdAt}
